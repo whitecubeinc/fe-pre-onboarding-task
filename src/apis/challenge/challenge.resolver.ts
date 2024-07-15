@@ -6,4 +6,3 @@ export const getChallengeResolver = () => {
     imageUrl: 'https://d246jgzr1jye8u.cloudfront.net/development/admin/1644299105539.png'
   })
 }
-  
