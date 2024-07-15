@@ -42,7 +42,7 @@ export const postConfirmResolver: HttpResponseResolver<never, FormData, PostConf
     if(isExpiredChallenge()) {
       return HttpResponse.json({ errorCode: 'EXPIRED_CHALLENGE' }, { status: 400 })
     }
-    return HttpResponse.json({ errorCode: 'INVALID_CONFIRM' }, { status: 400 })
+    return HttpResponse.json({ errorCode: 'INVALID_IMAGE' }, { status: 400 })
   }
 
   confirms.push({
