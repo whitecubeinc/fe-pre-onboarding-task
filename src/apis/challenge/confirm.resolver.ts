@@ -1,7 +1,7 @@
 import { HttpResponse, HttpResponseResolver } from "msw";
 
 interface Confirm {
-  confirmedDate: number;
+  createdAt: number;
   imageUrl: string;
   success: boolean; 
 }
@@ -15,10 +15,6 @@ export const getConfirmResolver = () => {
     history: confirms,
   })
 }
-
-interface PostConfirmParams {
-  imageUrl: string;
-}
 interface PostConfirmResponse {
   confirmedRate: number; 
   success: boolean;
@@ -27,17 +23,18 @@ interface PostConfirmError {
   errorCode: string;
 }
 
-export const postConfirmResolver: HttpResponseResolver<never, PostConfirmParams, PostConfirmResponse | PostConfirmError> = async ({ request }) => {
-  const { imageUrl } = await request.json();
+export const postConfirmResolver: HttpResponseResolver<never, FormData, PostConfirmResponse | PostConfirmError> = () => {
+  const createdAt = Date.now();
+  const imageUrl = 'https://d246jgzr1jye8u.cloudfront.net/development/admin/1644299105539.png';
+  
   const completedLength = confirms.filter(x => x.success).length;
-
   if(completedLength >= MAX_CONFIRM_LENGTH + 1) {
     return HttpResponse.json({ errorCode: 'COMPLETED_CHALLENGE' }, { status: 400 })
   }
   
   if(isFail()) {
     confirms.push({
-      confirmedDate: Date.now(),
+      createdAt,
       imageUrl, 
       success: false,
     })
@@ -49,7 +46,7 @@ export const postConfirmResolver: HttpResponseResolver<never, PostConfirmParams,
   }
 
   confirms.push({
-    confirmedDate: Date.now(),
+    createdAt: Date.now(),
     imageUrl, 
     success: true,
   })
