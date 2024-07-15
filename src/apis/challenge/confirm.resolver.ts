@@ -1,6 +1,7 @@
 import { HttpResponse, HttpResponseResolver } from "msw";
 
 interface Confirm {
+  id: string;
   createdAt: number;
   imageUrl: string;
   success: boolean; 
@@ -37,6 +38,7 @@ export const postConfirmResolver: HttpResponseResolver<never, FormData, PostConf
 
   if(isFail()) {
     confirms.push({
+      id: confirms.length.toString(),
       createdAt,
       imageUrl, 
       success: false,
@@ -49,6 +51,7 @@ export const postConfirmResolver: HttpResponseResolver<never, FormData, PostConf
   }
 
   confirms.push({
+    id: confirms.length.toString(),
     createdAt,
     imageUrl, 
     success: true,
