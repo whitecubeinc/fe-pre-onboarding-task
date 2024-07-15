@@ -10,8 +10,11 @@ const confirms: Confirm[] = []
 const MAX_CONFIRM_LENGTH = 3;
 
 export const getConfirmResolver = () => {
+  const completedLength = confirms.filter(x => x.success).length;
+  
   return HttpResponse.json({
     totalAvailableCount: MAX_CONFIRM_LENGTH,
+    success: completedLength === MAX_CONFIRM_LENGTH - 1,
     history: confirms,
   })
 }
@@ -31,7 +34,7 @@ export const postConfirmResolver: HttpResponseResolver<never, FormData, PostConf
 
   const createdAt = Date.now();
   const imageUrl = 'https://d246jgzr1jye8u.cloudfront.net/development/admin/1644299105539.png';
-  
+
   if(isFail()) {
     confirms.push({
       createdAt,
