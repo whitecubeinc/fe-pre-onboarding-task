@@ -24,13 +24,13 @@ interface PostConfirmError {
 }
 
 export const postConfirmResolver: HttpResponseResolver<never, FormData, PostConfirmResponse | PostConfirmError> = () => {
-  const createdAt = Date.now();
-  const imageUrl = 'https://d246jgzr1jye8u.cloudfront.net/development/admin/1644299105539.png';
-  
   const completedLength = confirms.filter(x => x.success).length;
   if(completedLength >= MAX_CONFIRM_LENGTH + 1) {
     return HttpResponse.json({ errorCode: 'COMPLETED_CHALLENGE' }, { status: 400 })
   }
+
+  const createdAt = Date.now();
+  const imageUrl = 'https://d246jgzr1jye8u.cloudfront.net/development/admin/1644299105539.png';
   
   if(isFail()) {
     confirms.push({
