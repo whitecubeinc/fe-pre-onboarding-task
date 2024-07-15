@@ -32,7 +32,7 @@ export const postAcheivmentResolver: HttpResponseResolver<never, PostAcheivmentP
   const completedLength = acheivements.filter(x => x.success).length;
 
   if(completedLength >= MAX_ACHEIVMENT_LENGTH + 1) {
-    return HttpResponse.json({ errorCode: 'COMPLETED' }, { status: 400, })
+    return HttpResponse.json({ errorCode: 'COMPLETED_CHALLENGE' }, { status: 400, })
   }
   
   if(isFail()) {
@@ -43,7 +43,7 @@ export const postAcheivmentResolver: HttpResponseResolver<never, PostAcheivmentP
     })
     
     if(isInvalidRequest()) {
-      return HttpResponse.json({ errorCode: 'EXPIRED_ACHEIVMENT' }, { status: 400, })
+      return HttpResponse.json({ errorCode: 'EXPIRED_CHALLENGE' }, { status: 400, })
     }
     return HttpResponse.json({ errorCode: 'INVALID_ACHEIVMENT' }, { status: 400 })
   }
