@@ -4,6 +4,6 @@ import { getChallengeResolver } from './challenge.resolver';
 
 export const handlers = [
   http.get('/challenge', getChallengeResolver),
-  http.get('/challenge/acheivment', getConfirmResolver),
-  http.post('/challenge/acheivment', postConfirmResolver),
+  http.get('/challenge/confirm', getConfirmResolver),
+  http.post('/challenge/confirm', postConfirmResolver),
 ];
