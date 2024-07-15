@@ -7,31 +7,31 @@ interface Acheivement {
 }
 
 const acheivements: Acheivement[] = []
-const MAX_ACHEIVMENT_LENGTH = 3;
+const MAX_ACHEIVEMENT_LENGTH = 3;
 
 export const getAcheivementResolver = () => {
   return HttpResponse.json({
-    totalAvailableCount: MAX_ACHEIVMENT_LENGTH,
+    totalAvailableCount: MAX_ACHEIVEMENT_LENGTH,
     history: acheivements,
   })
 }
 
-interface PostAcheivmentParams {
+interface PostAcheivementParams {
   imageUrl: string;
 }
-interface PostAcheivmentResponse {
+interface PostAcheivementResponse {
   achievementRate: number; 
   success: boolean;
 }
-interface PostAcheivmentError {
+interface PostAcheivementError {
   errorCode: string;
 }
 
-export const postAcheivmentResolver: HttpResponseResolver<never, PostAcheivmentParams, PostAcheivmentResponse | PostAcheivmentError> = async ({ request }) => {
+export const postAcheivementResolver: HttpResponseResolver<never, PostAcheivementParams, PostAcheivementResponse | PostAcheivementError> = async ({ request }) => {
   const { imageUrl } = await request.json();
   const completedLength = acheivements.filter(x => x.success).length;
 
-  if(completedLength >= MAX_ACHEIVMENT_LENGTH + 1) {
+  if(completedLength >= MAX_ACHEIVEMENT_LENGTH + 1) {
     return HttpResponse.json({ errorCode: 'COMPLETED_CHALLENGE' }, { status: 400 })
   }
   
@@ -45,7 +45,7 @@ export const postAcheivmentResolver: HttpResponseResolver<never, PostAcheivmentP
     if(isInvalidRequest()) {
       return HttpResponse.json({ errorCode: 'EXPIRED_CHALLENGE' }, { status: 400 })
     }
-    return HttpResponse.json({ errorCode: 'INVALID_ACHEIVMENT' }, { status: 400 })
+    return HttpResponse.json({ errorCode: 'INVALID_ACHEIVEMENT' }, { status: 400 })
   }
 
   acheivements.push({
@@ -54,7 +54,7 @@ export const postAcheivmentResolver: HttpResponseResolver<never, PostAcheivmentP
     success: true,
   })
   return HttpResponse.json({
-    achievementRate: completedLength / MAX_ACHEIVMENT_LENGTH,
+    achievementRate: completedLength / MAX_ACHEIVEMENT_LENGTH,
     success: true,
   })
 }
