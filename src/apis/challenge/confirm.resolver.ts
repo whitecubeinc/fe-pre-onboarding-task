@@ -46,7 +46,7 @@ export const postConfirmResolver: HttpResponseResolver<never, FormData, PostConf
   }
 
   confirms.push({
-    createdAt: Date.now(),
+    createdAt,
     imageUrl, 
     success: true,
   })
