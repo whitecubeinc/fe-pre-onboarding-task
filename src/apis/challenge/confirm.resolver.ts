@@ -14,7 +14,7 @@ export const getConfirmResolver = () => {
   
   return HttpResponse.json({
     totalAvailableCount: MAX_CONFIRM_LENGTH,
-    success: completedLength === MAX_CONFIRM_LENGTH - 1,
+    success: completedLength === MAX_CONFIRM_LENGTH,
     history: confirms,
   })
 }
@@ -28,7 +28,7 @@ interface PostConfirmError {
 
 export const postConfirmResolver: HttpResponseResolver<never, FormData, PostConfirmResponse | PostConfirmError> = () => {
   const completedLength = confirms.filter(x => x.success).length;
-  if(completedLength >= MAX_CONFIRM_LENGTH + 1) {
+  if(completedLength >= MAX_CONFIRM_LENGTH) {
     return HttpResponse.json({ errorCode: 'COMPLETED_CHALLENGE' }, { status: 400 })
   }
 
