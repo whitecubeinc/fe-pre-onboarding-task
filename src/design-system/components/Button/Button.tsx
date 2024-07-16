@@ -13,11 +13,9 @@ const Button = (
   const { ButtonComponent, fontType } = buttons[size];
   return (
     <ButtonComponent fill={fill} style={style} onClick={handleClick}>
-      {!!text && (
-        <Font.Body type={fontType} color={color} $textAlign="center">
-          {text}
-        </Font.Body>
-      )}
+      <Font.Body type={fontType} color={color} $textAlign="center">
+        {text}
+      </Font.Body>
     </ButtonComponent>
   );
 };
