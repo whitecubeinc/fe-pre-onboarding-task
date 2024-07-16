@@ -31,7 +31,7 @@ const Progress = ({ confirmCard }: Props) => {
         <L.LayoutBase w="100%" h={8} $bgColor="GRAY_200" rounded={4} />
         <L.Absolute
           l={0}
-          w={PROGRESS_WIDTH * 0.6}
+          w={PROGRESS_WIDTH * 0.66}
           h={8}
           rounded={4}
           $bgColor="PRIMARY_500"
