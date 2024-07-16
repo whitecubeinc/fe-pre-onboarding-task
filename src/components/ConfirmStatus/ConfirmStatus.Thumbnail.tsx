@@ -12,10 +12,10 @@ interface Props {
 const Thumbnail = ({ confirmInfoList }: Props) => {
   return (
     <L.FlexRow w="100%" ph={20} pv={24} $gap={10} style={{ overflow: "auto" }}>
-      {confirmInfoList.map(({ createdAt, status, imageUrl }, index) => {
+      {confirmInfoList.map(({ id, createdAt, status, imageUrl }, index) => {
         const isBeforeConfirm = status === "BEFORE_CONFIRM";
         return (
-          <L.FlexCol key={index} $gap={12}>
+          <L.FlexCol key={`${id}-${index}`} $gap={12}>
             <S.Container $showshadow={isBeforeConfirm}>
               <L.LayoutBase
                 w={SIZE}

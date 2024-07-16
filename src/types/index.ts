@@ -1,4 +1,5 @@
 export type ConfirmInfo = {
+  id: number;
   createdAt?: string;
   imageUrl?: string;
   status: ConfirmStatus;
