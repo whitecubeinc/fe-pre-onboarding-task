@@ -3,6 +3,7 @@ import { Colors } from "@design-system";
 import styled, { ThemeProvider } from "styled-components";
 import { ConfirmStatus } from "./components/ConfirmStatus";
 import { CONFIRM_CARD_MOCKS } from "./mocks";
+import ConfirmButton from "./components/ConfirmButton/ConfirmButton";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <ConfirmStatus.Progress confirmCard={CONFIRM_CARD_MOCKS} />
           <ConfirmStatus.Count confirmCard={CONFIRM_CARD_MOCKS} />
           <ConfirmStatus.Thumbnail confirmCard={CONFIRM_CARD_MOCKS} />
+          <ConfirmButton confirmCard={CONFIRM_CARD_MOCKS} />
         </Wrapper>
       </Container>
     </ThemeProvider>
