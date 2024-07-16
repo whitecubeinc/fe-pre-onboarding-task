@@ -1,12 +1,12 @@
 import { ImgHTMLAttributes } from "react";
 
-type RegularImageProps = {
+interface RegularImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt?: string;
   width: number;
   height: number;
   borderRadius?: number;
-} & ImgHTMLAttributes<HTMLImageElement>;
+}
 
 const RegularImage = (props: RegularImageProps) => {
   const {
