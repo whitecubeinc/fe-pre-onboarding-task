@@ -1,5 +1,5 @@
 import { MainImage } from "@components";
-import { Colors } from "@design-system";
+import { Colors, SCREEN_WIDTH } from "@design-system";
 import styled, { ThemeProvider } from "styled-components";
 import { ConfirmStatus } from "./components/ConfirmStatus";
 import { CONFIRM_CARD_MOCKS } from "./mocks";
@@ -32,11 +32,14 @@ const Page = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-color: ${Colors.BASIC_BLACK};
 `;
 
 const Content = styled.div`
   width: 100%;
-  max-width: 500px;
-  position: relative;
+  height: 100%;
+  max-width: ${SCREEN_WIDTH}px;
+  background-color: ${Colors.BASIC_WHITE};
 `;
