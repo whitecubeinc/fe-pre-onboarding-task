@@ -2,6 +2,7 @@ import { MainImage } from "@components";
 import { Colors } from "@design-system";
 import styled, { ThemeProvider } from "styled-components";
 import { ConfirmStatus } from "./components/ConfirmStatus";
+import { CONFIRM_CARD_MOCKS } from "./mocks";
 
 function App() {
   return (
@@ -14,9 +15,9 @@ function App() {
               "https://d246jgzr1jye8u.cloudfront.net/development/admin/1644299105539.png"
             }
           />
-          <ConfirmStatus.Progress confirmCard={[]} />
-          <ConfirmStatus.Count confirmCard={[]} />
-          <ConfirmStatus.Thumbnail confirmCard={[]} />
+          <ConfirmStatus.Progress confirmCard={CONFIRM_CARD_MOCKS} />
+          <ConfirmStatus.Count confirmCard={CONFIRM_CARD_MOCKS} />
+          <ConfirmStatus.Thumbnail confirmCard={CONFIRM_CARD_MOCKS} />
         </Wrapper>
       </Container>
     </ThemeProvider>
