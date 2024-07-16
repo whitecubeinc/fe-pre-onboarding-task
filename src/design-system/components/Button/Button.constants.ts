@@ -17,3 +17,9 @@ export const buttonColorSettings: { [key in ButtonType]: ButtonColorSetting } =
       disabled: { background: "GRAY_300", text: "GRAY_500" },
     },
   };
+
+export const BUTTON_HEIGHT = {
+  LARGE: 52,
+  MEDIUM: 46,
+  SMALL: 34,
+};

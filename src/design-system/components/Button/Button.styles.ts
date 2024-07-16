@@ -1,5 +1,6 @@
 import { ColorKeys } from "src/design-system/colors";
 import styled from "styled-components";
+import { BUTTON_HEIGHT } from "./Button.constants";
 
 type ButtonProps = {
   fill: ColorKeys;
@@ -12,12 +13,6 @@ const Button = styled.div<ButtonProps>`
   justify-content: center;
   word-break: keep-all;
 `;
-
-export const BUTTON_HEIGHT = {
-  LARGE: 52,
-  MEDIUM: 46,
-  SMALL: 34,
-};
 
 export const LargeButton = styled(Button)`
   height: ${BUTTON_HEIGHT.LARGE}px;
