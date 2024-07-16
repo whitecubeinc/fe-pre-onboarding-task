@@ -11,11 +11,11 @@ const MainImage = ({ imageUrl, title }: Props) => {
       <img src={imageUrl} style={{ width: "100%" }} />
       <L.Absolute l={0} b={0} r={0}>
         <L.LayoutBase
+          w="100%"
           pb={16}
           pt={40}
           ph={20}
           style={{
-            width: "100%",
             background:
               "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.30) 100%)",
           }}

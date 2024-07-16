@@ -11,20 +11,20 @@ interface Props {
 
 const Thumbnail = ({ confirmCard }: Props) => {
   return (
-    <L.FlexRow w="100%" ph={20} pv={24} gap={10} style={{ overflow: "auto" }}>
+    <L.FlexRow w="100%" ph={20} pv={24} $gap={10} style={{ overflow: "auto" }}>
       {confirmCard.map(({ createdAt, status, imageUrl }, index) => {
         const isBeforeConfirm = status === "BEFORE_CONFIRM";
         return (
-          <L.FlexCol key={index} gap={12}>
+          <L.FlexCol key={index} $gap={12}>
             <S.Container $showshadow={isBeforeConfirm}>
               <L.LayoutBase
                 w={SIZE}
                 h={22}
                 mb={4}
                 rounded={11}
-                alignItems="center"
-                justifyContent="center"
-                bgColor="GRAY_200"
+                $alignItems="center"
+                $justifyContent="center"
+                $bgColor="GRAY_200"
               >
                 <Font.Body
                   type="12_medium_single"
@@ -52,7 +52,7 @@ const Thumbnail = ({ confirmCard }: Props) => {
                   </Font.Body>
                 )}
               </L.LayoutBase>
-              <L.LayoutBase w={SIZE} h={SIZE} rounded={8} bgColor="GRAY_200">
+              <L.LayoutBase w={SIZE} h={SIZE} rounded={8} $bgColor="GRAY_200">
                 {imageUrl && (
                   <RegularImage src={imageUrl} width={SIZE} height={SIZE} />
                 )}

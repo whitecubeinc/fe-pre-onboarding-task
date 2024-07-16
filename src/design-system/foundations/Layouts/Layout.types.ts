@@ -30,15 +30,15 @@ export type BoxStyle = {
   Padding;
 
 export type BgColor = {
-  bgColor?: ColorKeys;
+  $bgColor?: ColorKeys;
 };
 
 type FlexType = "center" | "flex-start" | "flex-end";
 
 export type Flex = {
-  flex?: number;
-  alignSelf?: FlexType;
-  alignItems?: FlexType;
-  justifyContent?: FlexType | "space-between" | "space-evenly";
-  gap?: number;
+  $flex?: number;
+  $alignSelf?: FlexType;
+  $alignItems?: FlexType;
+  $justifyContent?: FlexType | "space-between" | "space-evenly";
+  $gap?: number;
 };

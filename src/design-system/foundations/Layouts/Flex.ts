@@ -33,20 +33,20 @@ export const LayoutBase = styled.div<BgColor & Flex & BoxStyle & Border>`
     ml,
     w,
     h,
-    flex,
+    $flex,
     rounded,
     z,
     outline,
-    alignItems = "flex-start",
-    bgColor = "TRANSPARENT",
-    justifyContent = "flex-start",
-    gap,
+    $alignItems = "flex-start",
+    $bgColor = "TRANSPARENT",
+    $justifyContent = "flex-start",
+    $gap,
   }) => css`
     ${getStyle("padding", toMarginPaddingString(p, ph, pv, pt, pr, pb, pl))}
     ${getStyle("margin", toMarginPaddingString(m, mh, mv, mt, mr, mb, ml))}
     ${getStyle("width", w)}
     ${getStyle("height", h)}
-    ${getStyle("flex", flex)}
+    ${getStyle("flex", $flex)}
     ${getStyle("border-radius", rounded)}
     ${getStyle("border-color", outline ? theme[outline] : undefined)}
     ${getStyle("z-index", z)}
@@ -55,10 +55,10 @@ export const LayoutBase = styled.div<BgColor & Flex & BoxStyle & Border>`
       ? "border-width: 1px; border-style: solid;"
       : ""}
     display: flex;
-    align-items: ${alignItems};
-    justify-content: ${justifyContent};
-    background-color: ${theme[bgColor]};
-    gap: ${gap || 0}px;
+    align-items: ${$alignItems};
+    justify-content: ${$justifyContent};
+    background-color: ${theme[$bgColor]};
+    gap: ${$gap || 0}px;
   `}
 `;
 
