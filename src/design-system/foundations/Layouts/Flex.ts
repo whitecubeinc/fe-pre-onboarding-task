@@ -40,7 +40,7 @@ export const LayoutBase = styled.div<BgColor & Flex & BoxStyle & Border>`
     alignItems = "flex-start",
     bgColor = "TRANSPARENT",
     justifyContent = "flex-start",
-    opacity,
+    gap,
   }) => css`
     ${getStyle("padding", toMarginPaddingString(p, ph, pv, pt, pr, pb, pl))}
     ${getStyle("margin", toMarginPaddingString(m, mh, mv, mt, mr, mb, ml))}
@@ -50,12 +50,15 @@ export const LayoutBase = styled.div<BgColor & Flex & BoxStyle & Border>`
     ${getStyle("border-radius", rounded)}
     ${getStyle("border-color", outline ? theme[outline] : undefined)}
     ${getStyle("z-index", z)}
-    ${getStyle("opacity", opacity)}
     ${typeof rounded === "number" ? "overflow: hidden;" : ""}
-    ${typeof outline === "string" ? "border-width: 1px;" : ""}
+    ${typeof outline === "string"
+      ? "border-width: 1px; border-style: solid;"
+      : ""}
+    display: flex;
     align-items: ${alignItems};
     justify-content: ${justifyContent};
     background-color: ${theme[bgColor]};
+    gap: ${gap || 0}px;
   `}
 `;
 

@@ -40,5 +40,5 @@ export type Flex = {
   alignSelf?: FlexType;
   alignItems?: FlexType;
   justifyContent?: FlexType | "space-between" | "space-evenly";
-  opacity?: number;
+  gap?: number;
 };
