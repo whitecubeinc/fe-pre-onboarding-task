@@ -48,7 +48,7 @@ const Thumbnail = ({ confirmInfoList }: Props) => {
                     type="14_semibold_single"
                     color={ACHIEVEMENT_STATUS[status].color}
                   >
-                    {status === "SUCCESS" ? "성공" : "실패"}
+                    {ACHIEVEMENT_STATUS[status].text}
                   </Font.Body>
                 )}
               </L.LayoutBase>
