@@ -15,13 +15,13 @@ export type ButtonSetting = {
   };
 };
 
+export type ButtonColorSetting = {
+  [key in ButtonStatus]: { background: ColorKeys; text: ColorKeys };
+};
+
 export type ButtonType = "primary_fill" | "gray_900_fill" | "white_fill";
 
 export type ButtonStatus = "normal" | "disabled";
-
-type Colors = { background: ColorKeys; text: ColorKeys };
-
-export type ButtonColorSetting = { [key in ButtonStatus]: Colors };
 
 export type ButtonProps = {
   type: ButtonType;
