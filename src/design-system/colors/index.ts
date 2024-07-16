@@ -25,4 +25,4 @@ export const Colors = {
 };
 
 export type ColorType = typeof Colors;
-export type ColorKeys = Exclude<keyof ColorType, "SHADOW">;
+export type ColorKeys = keyof ColorType;
