@@ -5,7 +5,7 @@ import { BUTTON_HEIGHT } from "./Button.constants";
 type ButtonProps = {
   fill: ColorKeys;
 };
-const Button = styled.div<ButtonProps>`
+const Button = styled.button<ButtonProps>`
   background-color: ${({ theme, fill }) => theme[fill]};
   display: flex;
   flex-direction: row;

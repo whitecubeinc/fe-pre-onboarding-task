@@ -9,18 +9,16 @@ const Button = (
   } & ButtonProps
 ) => {
   const { size, style, ...buttonProps } = props;
-  const { text, color, fill, ...handlers } = useButton(buttonProps);
+  const { text, color, fill, handleClick } = useButton(buttonProps);
   const { ButtonComponent, fontType } = buttons[size];
   return (
-    <button {...handlers} style={style}>
-      <ButtonComponent fill={fill}>
-        {!!text && (
-          <Font.Body type={fontType} color={color} $textAlign="center">
-            {text}
-          </Font.Body>
-        )}
-      </ButtonComponent>
-    </button>
+    <ButtonComponent fill={fill} style={style} onClick={handleClick}>
+      {!!text && (
+        <Font.Body type={fontType} color={color} $textAlign="center">
+          {text}
+        </Font.Body>
+      )}
+    </ButtonComponent>
   );
 };
 
