@@ -53,10 +53,8 @@ const Thumbnail = ({ confirmCard }: Props) => {
                 )}
               </L.LayoutBase>
               <L.LayoutBase w={SIZE} h={SIZE} rounded={8} bgColor="GRAY_200">
-                {imageUrl ? (
+                {imageUrl && (
                   <RegularImage src={imageUrl} width={SIZE} height={SIZE} />
-                ) : (
-                  <></>
                 )}
               </L.LayoutBase>
             </S.Container>
