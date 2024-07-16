@@ -1,9 +1,8 @@
-import { ColorKeys, Font, Layout as L, RegularImage } from "@design-system";
-import { ConfirmStatus, ConfirmInfo } from "@types";
+import { Font, Layout as L, RegularImage } from "@design-system";
+import { ConfirmInfo } from "@types";
 import { format } from "date-fns";
+import { ACHIEVEMENT_STATUS, SIZE } from "./ConfirmStatus.Thumbnail.constants";
 import * as S from "./ConfirmStatus.Thumbnail.styles";
-
-const SIZE = 40;
 
 interface Props {
   confirmInfoList: ConfirmInfo[];
@@ -66,23 +65,3 @@ const Thumbnail = ({ confirmInfoList }: Props) => {
 };
 
 export default Thumbnail;
-
-export const ACHIEVEMENT_STATUS: Record<
-  ConfirmStatus,
-  {
-    text: string;
-    color?: ColorKeys;
-  }
-> = {
-  SUCCESS: {
-    text: "성공",
-    color: "SYSTEM_SUCCESS",
-  },
-  FAIL: {
-    text: "실패",
-    color: "SYSTEM_ERROR",
-  },
-  BEFORE_CONFIRM: {
-    text: "",
-  },
-};
