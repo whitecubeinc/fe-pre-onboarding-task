@@ -1,4 +1,4 @@
-export type ConfirmCard = {
+export type ConfirmInfo = {
   createdAt?: string;
   imageUrl?: string;
   status: ConfirmStatus;

@@ -16,10 +16,10 @@ function App() {
               "https://d246jgzr1jye8u.cloudfront.net/development/admin/1644299105539.png"
             }
           />
-          <ConfirmStatus.Progress confirmCard={CONFIRM_CARD_MOCKS} />
-          <ConfirmStatus.Count confirmCard={CONFIRM_CARD_MOCKS} />
-          <ConfirmStatus.Thumbnail confirmCard={CONFIRM_CARD_MOCKS} />
-          <ConfirmButton confirmCard={CONFIRM_CARD_MOCKS} />
+          <ConfirmStatus.Progress confirmInfoList={CONFIRM_CARD_MOCKS} />
+          <ConfirmStatus.Count confirmInfoList={CONFIRM_CARD_MOCKS} />
+          <ConfirmStatus.Thumbnail confirmInfoList={CONFIRM_CARD_MOCKS} />
+          <ConfirmButton confirmInfoList={CONFIRM_CARD_MOCKS} />
         </Wrapper>
       </Container>
     </ThemeProvider>

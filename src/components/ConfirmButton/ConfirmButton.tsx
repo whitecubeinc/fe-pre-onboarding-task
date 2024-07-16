@@ -1,11 +1,11 @@
 import { Button, Layout as L, SCREEN_WIDTH } from "@design-system";
-import { ConfirmCard } from "@types";
+import { ConfirmInfo } from "@types";
 
 interface Props {
-  confirmCard: ConfirmCard[];
+  confirmInfoList: ConfirmInfo[];
 }
 
-const ConfirmButton = ({ confirmCard }: Props) => {
+const ConfirmButton = ({ confirmInfoList }: Props) => {
   return (
     <L.LayoutBase
       w={SCREEN_WIDTH}

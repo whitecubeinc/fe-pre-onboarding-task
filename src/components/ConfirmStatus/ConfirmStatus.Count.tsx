@@ -1,11 +1,11 @@
 import { Font, Layout as L } from "@design-system";
-import { ConfirmCard } from "@types";
+import { ConfirmInfo } from "@types";
 
 interface Props {
-  confirmCard: ConfirmCard[];
+  confirmInfoList: ConfirmInfo[];
 }
 
-const Count = ({ confirmCard }: Props) => {
+const Count = ({ confirmInfoList }: Props) => {
   return (
     <L.FlexCol ph={20} pv={24}>
       <L.FlexRow $gap={60} w="100%" $justifyContent="space-between">

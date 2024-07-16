@@ -1,18 +1,18 @@
 import { ColorKeys, Font, Layout as L, RegularImage } from "@design-system";
-import { ConfirmStatus, ConfirmCard } from "@types";
+import { ConfirmStatus, ConfirmInfo } from "@types";
 import { format } from "date-fns";
 import * as S from "./ConfirmStatus.Thumbnail.styles";
 
 const SIZE = 40;
 
 interface Props {
-  confirmCard: ConfirmCard[];
+  confirmInfoList: ConfirmInfo[];
 }
 
-const Thumbnail = ({ confirmCard }: Props) => {
+const Thumbnail = ({ confirmInfoList }: Props) => {
   return (
     <L.FlexRow w="100%" ph={20} pv={24} $gap={10} style={{ overflow: "auto" }}>
-      {confirmCard.map(({ createdAt, status, imageUrl }, index) => {
+      {confirmInfoList.map(({ createdAt, status, imageUrl }, index) => {
         const isBeforeConfirm = status === "BEFORE_CONFIRM";
         return (
           <L.FlexCol key={index} $gap={12}>

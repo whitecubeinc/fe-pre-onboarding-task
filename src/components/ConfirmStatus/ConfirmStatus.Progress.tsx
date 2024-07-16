@@ -1,14 +1,14 @@
 import { Font, Layout as L, SCREEN_WIDTH } from "@design-system";
-import { ConfirmCard } from "@types";
+import { ConfirmInfo } from "@types";
 
 const PADDING_HORIZONTAL = 20;
 const PROGRESS_WIDTH = SCREEN_WIDTH - PADDING_HORIZONTAL * 2;
 
 interface Props {
-  confirmCard: ConfirmCard[];
+  confirmInfoList: ConfirmInfo[];
 }
 
-const Progress = ({ confirmCard }: Props) => {
+const Progress = ({ confirmInfoList }: Props) => {
   return (
     <L.FlexCol ph={20} pv={24}>
       <L.FlexRow w="100%" $justifyContent="space-between">
