@@ -8,8 +8,8 @@ import ConfirmButton from "./components/ConfirmButton/ConfirmButton";
 function App() {
   return (
     <ThemeProvider theme={Colors}>
-      <Container>
-        <Wrapper>
+      <Page>
+        <Content>
           <MainImage
             title={"1만보 걷기"}
             imageUrl={
@@ -20,22 +20,22 @@ function App() {
           <ConfirmStatus.Count confirmInfoList={CONFIRM_CARD_MOCKS} />
           <ConfirmStatus.Thumbnail confirmInfoList={CONFIRM_CARD_MOCKS} />
           <ConfirmButton confirmInfoList={CONFIRM_CARD_MOCKS} />
-        </Wrapper>
-      </Container>
+        </Content>
+      </Page>
     </ThemeProvider>
   );
 }
 
 export default App;
 
-const Container = styled.main`
+const Page = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 `;
 
-const Wrapper = styled.div`
+const Content = styled.div`
   width: 100%;
   max-width: 500px;
   position: relative;
