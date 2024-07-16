@@ -14,20 +14,6 @@ export type FontSettings = {
   $textAlign?: "left" | "right" | "center";
 };
 
-export type DisplayType =
-  | "40_bold_single"
-  | "40_semibold_single"
-  | "40_bold_multi"
-  | "40_semibold_multi"
-  | "32_bold_single"
-  | "32_semibold_single"
-  | "32_bold_multi"
-  | "32_semibold_multi"
-  | "28_bold_single"
-  | "28_semibold_single"
-  | "28_bold_multi"
-  | "28_semibold_multi";
-
 export type TitleType =
   | "24_bold_single"
   | "24_semibold_single"

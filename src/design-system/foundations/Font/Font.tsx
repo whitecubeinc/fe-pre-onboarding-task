@@ -1,18 +1,9 @@
 import React from "react";
 import { ColorKeys } from "src/design-system/colors";
 import { Margin } from "../Layouts";
-import { BodySettings, DisplaySettings, TitleSettings } from "./Font.constants";
+import { BodySettings, TitleSettings } from "./Font.constants";
 import * as S from "./Font.styles";
-import { BodyType, DisplayType, TitleType } from "./Font.types";
-
-const Display: React.FC<DisplayProps> = React.memo((props) => {
-  const { type, children, ...textProps } = props;
-  return (
-    <S.Font {...DisplaySettings[type]} {...textProps}>
-      {children}
-    </S.Font>
-  );
-});
+import { BodyType, TitleType } from "./Font.types";
 
 const Title: React.FC<TitleProps> = React.memo((props: TitleProps) => {
   const { type, children, ...textProps } = props;
@@ -60,10 +51,6 @@ export type TextPropsBase = {
   children?: React.ReactNode;
 } & Margin;
 
-export type DisplayProps = {
-  type: DisplayType;
-} & TextPropsBase;
-
 export type TitleProps = {
   type: TitleType;
 } & TextPropsBase;
@@ -81,7 +68,6 @@ export type BodyProps = {
  */
 
 export default {
-  Display,
   Title,
   Body,
 };
