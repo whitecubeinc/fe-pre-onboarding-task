@@ -14,7 +14,7 @@ const Thumbnail = ({ confirmInfoList }: Props) => {
       {confirmInfoList.map(({ id, createdAt, status, imageUrl }, index) => {
         const isBeforeConfirm = status === "BEFORE_CONFIRM";
         return (
-          <L.FlexCol key={`${id}-${index}`} $gap={12}>
+          <L.FlexCol key={id} $gap={12}>
             <S.Container $showshadow={isBeforeConfirm}>
               <L.LayoutBase
                 w={SIZE}
