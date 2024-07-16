@@ -3,12 +3,12 @@ import { buttonColorSettings } from "./Button.constants";
 import { ButtonProps } from "./Button.types";
 
 export const useButton = (props: ButtonProps) => {
-  const { type, status, text, onClick: _onClick } = props;
+  const { type, status, text, onClick } = props;
   const colorSetting = buttonColorSettings[type];
 
-  const onClick = useCallback(() => {
-    status === "normal" && _onClick?.();
-  }, [status, _onClick]);
+  const handleClick = useCallback(() => {
+    status === "normal" && onClick?.();
+  }, [status, onClick]);
 
   const fill = colorSetting[status].background;
   const color = colorSetting[status].text;
@@ -17,6 +17,6 @@ export const useButton = (props: ButtonProps) => {
     text,
     fill,
     color,
-    onClick,
+    handleClick,
   };
 };
