@@ -1,6 +1,7 @@
 import { MainImage } from "@components";
 import { Colors } from "@design-system";
 import styled, { ThemeProvider } from "styled-components";
+import { ConfirmStatus } from "./components/ConfirmStatus";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
               "https://d246jgzr1jye8u.cloudfront.net/development/admin/1644299105539.png"
             }
           />
+          <ConfirmStatus.Progress confirmCard={[]} />
+          <ConfirmStatus.Count confirmCard={[]} />
+          <ConfirmStatus.Thumbnail confirmCard={[]} />
         </Wrapper>
       </Container>
     </ThemeProvider>
