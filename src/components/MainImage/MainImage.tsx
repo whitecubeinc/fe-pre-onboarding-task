@@ -1,4 +1,4 @@
-import { Font, Layout as L } from "@design-system";
+import { Font, Layout as L, SCREEN_WIDTH } from "@design-system";
 
 interface Props {
   imageUrl: string;
@@ -7,8 +7,17 @@ interface Props {
 
 const MainImage = ({ imageUrl, title }: Props) => {
   return (
-    <div style={{ position: "relative" }}>
-      <img src={imageUrl} style={{ width: "100%" }} />
+    <div
+      style={{
+        position: "relative",
+        width: SCREEN_WIDTH,
+        height: SCREEN_WIDTH * 0.75,
+      }}
+    >
+      <img
+        src={imageUrl}
+        style={{ width: SCREEN_WIDTH, height: SCREEN_WIDTH * 0.75 }}
+      />
       <L.Absolute l={0} b={0} r={0}>
         <L.LayoutBase
           w="100%"
