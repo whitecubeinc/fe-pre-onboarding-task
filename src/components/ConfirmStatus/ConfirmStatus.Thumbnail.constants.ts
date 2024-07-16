@@ -3,7 +3,7 @@ import { ConfirmStatus } from "@types";
 
 export const SIZE = 40;
 
-export const ACHIEVEMENT_STATUS: Record<
+export const CONFIRM_STATUS: Record<
   ConfirmStatus,
   {
     text: string;

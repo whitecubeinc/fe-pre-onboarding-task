@@ -1,7 +1,7 @@
 import { Font, Layout as L, RegularImage } from "@design-system";
 import { ConfirmInfo } from "@types";
 import { format } from "date-fns";
-import { ACHIEVEMENT_STATUS, SIZE } from "./ConfirmStatus.Thumbnail.constants";
+import { CONFIRM_STATUS, SIZE } from "./ConfirmStatus.Thumbnail.constants";
 import * as S from "./ConfirmStatus.Thumbnail.styles";
 
 interface Props {
@@ -45,9 +45,9 @@ const Thumbnail = ({ confirmInfoList }: Props) => {
                 {!isBeforeConfirm && (
                   <Font.Body
                     type="14_semibold_single"
-                    color={ACHIEVEMENT_STATUS[status].color}
+                    color={CONFIRM_STATUS[status].color}
                   >
-                    {ACHIEVEMENT_STATUS[status].text}
+                    {CONFIRM_STATUS[status].text}
                   </Font.Body>
                 )}
               </L.LayoutBase>
